@@ -1,11 +1,13 @@
-# This entrypoint file to be used in development. Start by reading README.md
-import time_series_visualizer
-from unittest import main
+from time_series_visualizer import draw_line_plot, draw_bar_plot, draw_box_plot
 
-# Test your function by calling it here
-time_series_visualizer.draw_line_plot()
-time_series_visualizer.draw_bar_plot()
-time_series_visualizer.draw_box_plot()
+# Generate and save the line plot
+line_plot = draw_line_plot()
+line_plot.savefig("line_plot.png")
 
-# Run unit tests automatically
-main(module='test_module', exit=False)
+# Generate and save the bar plot
+bar_plot = draw_bar_plot()
+bar_plot.savefig("bar_plot.png")
+
+# Generate and save the box plot
+box_plot = draw_box_plot()
+box_plot.savefig("box_plot.png")
